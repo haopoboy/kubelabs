@@ -25,4 +25,4 @@ jobs:
           kubectl get pods -A -o wide
       - name: Lookup GitHub
         run: |
-          kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github.com
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- ping github.com -t 3
