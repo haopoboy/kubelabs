@@ -25,4 +25,4 @@ jobs:
           kubectl get pods -A -o wide
       - name: Lookup GitHub
         run: |
-          kubectl run -i busybox --image=busybox --restart=Never -- echo hello-woeld
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- echo hello-woeld
