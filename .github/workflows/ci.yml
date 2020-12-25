@@ -19,10 +19,11 @@ jobs:
       - uses: balchua/microk8s-actions@v0.2.1
         with:
           channel: ${{ matrix.version }}/stable
+          addons: '["dns"]'
       - name: Test
         run: |
           kubectl get no
           kubectl get pods -A -o wide
       - name: Lookup GitHub
         run: |
-          kubectl run -i --rm busybox --image=busybox --restart=Never -- ping github.com -t 3
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github.com
