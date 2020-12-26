@@ -27,3 +27,4 @@ jobs:
       - name: Lookup GitHub
         run: |
           kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github.com
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github
