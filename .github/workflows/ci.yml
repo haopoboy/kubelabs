@@ -29,5 +29,5 @@ jobs:
           kubectl apply -f external-services.yaml
       - name: Lookup GitHub
         run: |
-          kubectl run -i busybox --image=busybox --restart=Never -- nslookup github.com
-          kubectl run -i busybox --image=busybox --restart=Never -- nslookup github
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github.com
+          kubectl run -i --rm busybox --image=busybox --restart=Never -- nslookup github
